@@ -426,17 +426,18 @@ function App() {
                           <input
                             type="checkbox"
                             className="rounded border-slate-300 text-slate-900 focus:ring-slate-500"
+                            checked={selectedProduct.selectedToppings?.some(t => t.id === topping.id)}
                             onChange={(e) => {
-                              const currentToppings = selectedProduct.toppings || [];
+                              const currentToppings = selectedProduct.selectedToppings || [];
                               if (e.target.checked) {
                                 setSelectedProduct({
                                   ...selectedProduct,
-                                  toppings: [...currentToppings, topping]
+                                  selectedToppings: [...currentToppings, topping]
                                 });
                               } else {
                                 setSelectedProduct({
                                   ...selectedProduct,
-                                  toppings: currentToppings.filter(t => t.id !== topping.id)
+                                  selectedToppings: currentToppings.filter(t => t.id !== topping.id)
                                 });
                               }
                             }}
@@ -465,7 +466,8 @@ function App() {
                       ...selectedProduct,
                       quantity: 1,
                       price: selectedProduct.selectedSize?.price || selectedProduct.sizes[0].price,
-                      size: selectedProduct.selectedSize?.name || selectedProduct.sizes[0].name
+                      size: selectedProduct.selectedSize?.name || selectedProduct.sizes[0].name,
+                      toppings: selectedProduct.selectedToppings || []
                     }]);
                     setIsModalOpen(false);
                     setSelectedProduct(null);
