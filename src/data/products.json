@@ -1,0 +1,343 @@
+{
+    "categories": [
+        {
+            "id": "cafe",
+            "name": "Cà phê",
+            "description": "Các loại cà phê đặc biệt"
+        },
+        {
+            "id": "matcha",
+            "name": "Matcha",
+            "description": "Các loại matcha thơm ngon"
+        },
+        {
+            "id": "tra-sua",
+            "name": "Trà sữa",
+            "description": "Các loại trà sữa thơm ngon"
+        },
+        {
+            "id": "nuoc-ep",
+            "name": "Nước ép",
+            "description": "Các loại nước ép trái cây tươi"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Cà phê đen",
+            "description": "Cà phê đen nguyên chất",
+            "category": "cafe",
+            "allowToppings": false,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 22000
+                },
+                {
+                    "name": "Chai 100ml",
+                    "price": 37000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 60000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 2,
+            "name": "Cà phê sữa",
+            "description": "Cà phê sữa truyền thống",
+            "category": "cafe",
+            "allowToppings": false,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 24000
+                },
+                {
+                    "name": "Chai 100ml",
+                    "price": 39000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 62000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 3,
+            "name": "Bạc xỉu",
+            "description": "Bạc xỉu thơm ngon",
+            "category": "cafe",
+            "allowToppings": false,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 26000
+                },
+                {
+                    "name": "Chai 100ml",
+                    "price": 41000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 64000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 4,
+            "name": "Cà phê muối",
+            "description": "Cà phê muối đặc biệt",
+            "category": "cafe",
+            "allowToppings": false,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 22000
+                },
+                {
+                    "name": "Chai 100ml",
+                    "price": 22000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 48000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 5,
+            "name": "Matcha Latte",
+            "description": "Matcha Latte thơm ngon",
+            "category": "matcha",
+            "allowToppings": false,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 35000
+                },
+                {
+                    "name": "Chai 100ml",
+                    "price": 45000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 60000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 6,
+            "name": "Matcha Oatmilk",
+            "description": "Matcha Oatmilk thơm ngon",
+            "category": "matcha",
+            "allowToppings": false,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 37000
+                },
+                {
+                    "name": "Chai 100ml",
+                    "price": 47000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 62000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 7,
+            "name": "Trà sữa",
+            "description": "Trà sữa truyền thống",
+            "category": "tra-sua",
+            "allowToppings": true,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 29000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 39000
+                }
+            ],
+            "toppings": [
+                {
+                    "id": 1,
+                    "name": "Trân châu đường đen",
+                    "price": 5000
+                },
+                {
+                    "id": 2,
+                    "name": "Thạch dừa",
+                    "price": 5000
+                },
+                {
+                    "id": 3,
+                    "name": "Kem cheese",
+                    "price": 8000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 8,
+            "name": "Cần tây + cam + gừng",
+            "description": "Nước ép cần tây, cam và gừng tươi",
+            "category": "nuoc-ep",
+            "allowToppings": true,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 32000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 39000
+                }
+            ],
+            "toppings": [
+                {
+                    "id": 4,
+                    "name": "Gừng",
+                    "price": 5000
+                },
+                {
+                    "id": 5,
+                    "name": "Mix vị",
+                    "price": 5000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 9,
+            "name": "Cần tây + táo",
+            "description": "Nước ép cần tây và táo tươi",
+            "category": "nuoc-ep",
+            "allowToppings": true,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 32000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 39000
+                }
+            ],
+            "toppings": [
+                {
+                    "id": 4,
+                    "name": "Gừng",
+                    "price": 5000
+                },
+                {
+                    "id": 5,
+                    "name": "Mix vị",
+                    "price": 5000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 10,
+            "name": "Cần tây + thơm",
+            "description": "Nước ép cần tây và thơm tươi",
+            "category": "nuoc-ep",
+            "allowToppings": true,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 32000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 39000
+                }
+            ],
+            "toppings": [
+                {
+                    "id": 4,
+                    "name": "Gừng",
+                    "price": 5000
+                },
+                {
+                    "id": 5,
+                    "name": "Mix vị",
+                    "price": 5000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 11,
+            "name": "Táo + chanh + gừng",
+            "description": "Nước ép táo, chanh và gừng tươi",
+            "category": "nuoc-ep",
+            "allowToppings": true,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 32000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 39000
+                }
+            ],
+            "toppings": [
+                {
+                    "id": 4,
+                    "name": "Gừng",
+                    "price": 5000
+                },
+                {
+                    "id": 5,
+                    "name": "Mix vị",
+                    "price": 5000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 12,
+            "name": "Thơm + cam + cà rốt",
+            "description": "Nước ép thơm, cam và cà rốt tươi",
+            "category": "nuoc-ep",
+            "allowToppings": true,
+            "sizes": [
+                {
+                    "name": "Ly 330ml",
+                    "price": 32000
+                },
+                {
+                    "name": "Chai 250ml",
+                    "price": 39000
+                }
+            ],
+            "toppings": [
+                {
+                    "id": 4,
+                    "name": "Gừng",
+                    "price": 5000
+                },
+                {
+                    "id": 5,
+                    "name": "Mix vị",
+                    "price": 5000
+                }
+            ],
+            "image": "https://images.unsplash.com/photo-1558857563-7d3f1b5c4c1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        }
+    ]
+}
