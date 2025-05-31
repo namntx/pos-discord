@@ -62,7 +62,7 @@ function App() {
 
   // Xử lý đặt hàng
   const handleOrder = async () => {
-    if (!customerInfo.name || !customerInfo.phone || !customerInfo.address) {
+    if (customerInfo.orderType === 'takeaway' && (!customerInfo.name || !customerInfo.phone || !customerInfo.address)) {
       alert('Vui lòng điền đầy đủ thông tin khách hàng');
       return;
     }
@@ -70,7 +70,12 @@ function App() {
     try {
       const orderData = {
         items: cart,
-        customer_info: customerInfo,
+        customer_info: customerInfo.orderType === 'takeaway' ? customerInfo : {
+          name: 'Khách tại quán',
+          phone: 'N/A',
+          address: 'N/A',
+          orderType: 'dine-in'
+        },
         total: total,
         status: 'pending',
         created_at: new Date().toISOString()
@@ -334,7 +339,7 @@ function App() {
                         : 'bg-slate-900 hover:bg-slate-800'
                         }`}
                     >
-                      Đặt hàng
+                      {customerInfo.orderType === 'dine-in' ? 'Xác nhận đơn hàng' : 'Đặt hàng'}
                     </button>
                   </div>
                 </div>
