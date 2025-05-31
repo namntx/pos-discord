@@ -13,9 +13,10 @@ export const sendDiscordNotification = async (orderData) => {
                 description: `**Thời gian:** ${format(new Date(), 'HH:mm:ss dd/MM/yyyy')}`,
                 fields: [
                     {
-                        name: '👤 KHÁCH HÀNG',
-                        value: `**${orderData.customer_info.name}**\n📱 ${orderData.customer_info.phone}\n📍 ${orderData.customer_info.address}`,
-                        inline: false
+                        name: 'Thông tin khách hàng',
+                        value: orderData.order_type === 'takeaway' && orderData.customer_info
+                            ? `**${orderData.customer_info.name}**\n📱 ${orderData.customer_info.phone}\n📍 ${orderData.customer_info.address}`
+                            : '**Khách tại quán**'
                     },
                     {
                         name: '📋 CHI TIẾT ĐƠN HÀNG',

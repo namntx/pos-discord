@@ -16,8 +16,11 @@
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
     "lucide-react": "^0.511.0",
+    "prop-types": "^15.8.1",
+    "qrcode.react": "^4.2.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

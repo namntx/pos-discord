@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Coffee, ShoppingBag } from 'lucide-react';
 
-const NavigationTabs = ({ activeTab, setActiveTab, cartCount }) => {
+const NavigationTabs = ({ activeTab, setActiveTab, cartCount = 0 }) => {
   return (
     <div className="flex justify-center mb-12">
       <div className="inline-flex p-1 bg-slate-100 rounded-2xl">
@@ -33,6 +34,12 @@ const NavigationTabs = ({ activeTab, setActiveTab, cartCount }) => {
       </div>
     </div>
   );
+};
+
+NavigationTabs.propTypes = {
+  activeTab: PropTypes.oneOf(['menu', 'cart']).isRequired,
+  setActiveTab: PropTypes.func.isRequired,
+  cartCount: PropTypes.number
 };
 
 export default NavigationTabs;

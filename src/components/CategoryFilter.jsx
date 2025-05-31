@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { categories } from '../data/products';
 
 const CategoryFilter = ({ selectedCategory, setSelectedCategory }) => {
@@ -10,8 +11,8 @@ const CategoryFilter = ({ selectedCategory, setSelectedCategory }) => {
             key={category.id}
             onClick={() => setSelectedCategory(category.id)}
             className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${selectedCategory === category.id
-                ? 'bg-white text-slate-900 shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+              ? 'bg-white text-slate-900 shadow-sm'
+              : 'text-slate-600 hover:text-slate-900'
               }`}
           >
             {category.name}
@@ -20,6 +21,11 @@ const CategoryFilter = ({ selectedCategory, setSelectedCategory }) => {
       </div>
     </div>
   );
+};
+
+CategoryFilter.propTypes = {
+  selectedCategory: PropTypes.string.isRequired,
+  setSelectedCategory: PropTypes.func.isRequired
 };
 
 export default CategoryFilter;
