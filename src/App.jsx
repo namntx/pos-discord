@@ -12,7 +12,8 @@ function App() {
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
     phone: '',
-    address: ''
+    address: '',
+    orderType: 'dine-in' // 'dine-in' hoặc 'takeaway'
   });
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -88,7 +89,7 @@ function App() {
 
       // Reset giỏ hàng và thông tin khách hàng
       setCart([]);
-      setCustomerInfo({ name: '', phone: '', address: '' });
+      setCustomerInfo({ name: '', phone: '', address: '', orderType: 'dine-in' });
       alert('Đặt hàng thành công!');
     } catch (error) {
       console.error('Error creating order:', error);
@@ -253,48 +254,82 @@ function App() {
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl shadow-sm overflow-hidden">
                 <div className="p-6">
-                  <h2 className="text-xl font-semibold text-slate-900 mb-4">Thông tin khách hàng</h2>
+                  <h2 className="text-xl font-semibold text-slate-900 mb-4">Thông tin đơn hàng</h2>
                   <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1">
-                        Họ tên
+                        Hình thức đặt hàng
                       </label>
-                      <input
-                        type="text"
-                        value={customerInfo.name}
-                        onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
-                        className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
-                        placeholder="Nhập họ tên"
-                      />
+                      <div className="flex space-x-4">
+                        <label className="flex items-center">
+                          <input
+                            type="radio"
+                            name="orderType"
+                            value="dine-in"
+                            checked={customerInfo.orderType === 'dine-in'}
+                            onChange={(e) => setCustomerInfo({ ...customerInfo, orderType: e.target.value })}
+                            className="rounded-full border-slate-300 text-slate-900 focus:ring-slate-500"
+                          />
+                          <span className="ml-2 text-slate-700">Tại quán</span>
+                        </label>
+                        <label className="flex items-center">
+                          <input
+                            type="radio"
+                            name="orderType"
+                            value="takeaway"
+                            checked={customerInfo.orderType === 'takeaway'}
+                            onChange={(e) => setCustomerInfo({ ...customerInfo, orderType: e.target.value })}
+                            className="rounded-full border-slate-300 text-slate-900 focus:ring-slate-500"
+                          />
+                          <span className="ml-2 text-slate-700">Mang về</span>
+                        </label>
+                      </div>
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">
-                        Số điện thoại
-                      </label>
-                      <input
-                        type="tel"
-                        value={customerInfo.phone}
-                        onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
-                        className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
-                        placeholder="Nhập số điện thoại"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">
-                        Địa chỉ
-                      </label>
-                      <textarea
-                        value={customerInfo.address}
-                        onChange={(e) => setCustomerInfo({ ...customerInfo, address: e.target.value })}
-                        className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
-                        rows="3"
-                        placeholder="Nhập địa chỉ"
-                      />
-                    </div>
+
+                    {customerInfo.orderType === 'takeaway' && (
+                      <>
+                        <div>
+                          <label className="block text-sm font-medium text-slate-700 mb-1">
+                            Họ tên
+                          </label>
+                          <input
+                            type="text"
+                            value={customerInfo.name}
+                            onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
+                            className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
+                            placeholder="Nhập họ tên"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-slate-700 mb-1">
+                            Số điện thoại
+                          </label>
+                          <input
+                            type="tel"
+                            value={customerInfo.phone}
+                            onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
+                            className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
+                            placeholder="Nhập số điện thoại"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-slate-700 mb-1">
+                            Địa chỉ
+                          </label>
+                          <textarea
+                            value={customerInfo.address}
+                            onChange={(e) => setCustomerInfo({ ...customerInfo, address: e.target.value })}
+                            className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
+                            rows="3"
+                            placeholder="Nhập địa chỉ"
+                          />
+                        </div>
+                      </>
+                    )}
                     <button
                       onClick={handleOrder}
-                      disabled={cart.length === 0}
-                      className={`w-full py-3 rounded-lg text-white font-medium ${cart.length === 0
+                      disabled={cart.length === 0 || (customerInfo.orderType === 'takeaway' && (!customerInfo.name || !customerInfo.phone || !customerInfo.address))}
+                      className={`w-full py-3 rounded-lg text-white font-medium ${cart.length === 0 || (customerInfo.orderType === 'takeaway' && (!customerInfo.name || !customerInfo.phone || !customerInfo.address))
                         ? 'bg-slate-300 cursor-not-allowed'
                         : 'bg-slate-900 hover:bg-slate-800'
                         }`}
